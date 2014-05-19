@@ -1,0 +1,406 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C4779BA21925209A00945950 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4779BA11925209A00945950 /* Cocoa.framework */; };
+		C4779BAE1925209A00945950 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4779BAD1925209A00945950 /* main.m */; };
+		C4779BB51925209A00945950 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4779BB41925209A00945950 /* AppDelegate.m */; };
+		C4779BC21925209A00945950 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4779BA11925209A00945950 /* Cocoa.framework */; };
+		C486EBC3192A981400E75521 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C486EBC2192A981400E75521 /* MainMenu.xib */; };
+		C4950F9719254259007E1EAE /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4950F9619254259007E1EAE /* GraphView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C4779BC31925209A00945950 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4779B961925209A00945950 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4779B9D1925209A00945950;
+			remoteInfo = UVDG;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C4779B9E1925209A00945950 /* UVDG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UVDG.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4779BA11925209A00945950 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C4779BA41925209A00945950 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C4779BA61925209A00945950 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C4779BA91925209A00945950 /* UVDG-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UVDG-Info.plist"; sourceTree = "<group>"; };
+		C4779BAD1925209A00945950 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C4779BAF1925209A00945950 /* UVDG-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UVDG-Prefix.pch"; sourceTree = "<group>"; };
+		C4779BB31925209A00945950 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C4779BB41925209A00945950 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C4779BBF1925209A00945950 /* UVDGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UVDGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C486EBC2192A981400E75521 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		C4950F9519254259007E1EAE /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		C4950F9619254259007E1EAE /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C4779B9B1925209A00945950 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4779BA21925209A00945950 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4779BBC1925209A00945950 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4779BC21925209A00945950 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C4779B951925209A00945950 = {
+			isa = PBXGroup;
+			children = (
+				C4779BA71925209A00945950 /* UVDG */,
+				C4779BA01925209A00945950 /* Frameworks */,
+				C4779B9F1925209A00945950 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C4779B9F1925209A00945950 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C4779B9E1925209A00945950 /* UVDG.app */,
+				C4779BBF1925209A00945950 /* UVDGTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C4779BA01925209A00945950 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4779BA11925209A00945950 /* Cocoa.framework */,
+				C4779BA31925209A00945950 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4779BA31925209A00945950 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4779BA41925209A00945950 /* AppKit.framework */,
+				C4779BA61925209A00945950 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		C4779BA71925209A00945950 /* UVDG */ = {
+			isa = PBXGroup;
+			children = (
+				C4779BB31925209A00945950 /* AppDelegate.h */,
+				C4779BB41925209A00945950 /* AppDelegate.m */,
+				C4950F9519254259007E1EAE /* GraphView.h */,
+				C4950F9619254259007E1EAE /* GraphView.m */,
+				C4779BAD1925209A00945950 /* main.m */,
+				C4779BAF1925209A00945950 /* UVDG-Prefix.pch */,
+				C4779BA91925209A00945950 /* UVDG-Info.plist */,
+				C486EBC2192A981400E75521 /* MainMenu.xib */,
+			);
+			path = UVDG;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C4779B9D1925209A00945950 /* UVDG */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4779BCF1925209A00945950 /* Build configuration list for PBXNativeTarget "UVDG" */;
+			buildPhases = (
+				C4779B9A1925209A00945950 /* Sources */,
+				C4779B9B1925209A00945950 /* Frameworks */,
+				C4779B9C1925209A00945950 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UVDG;
+			productName = UVDG;
+			productReference = C4779B9E1925209A00945950 /* UVDG.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C4779BBE1925209A00945950 /* UVDGTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4779BD21925209A00945950 /* Build configuration list for PBXNativeTarget "UVDGTests" */;
+			buildPhases = (
+				C4779BBB1925209A00945950 /* Sources */,
+				C4779BBC1925209A00945950 /* Frameworks */,
+				C4779BBD1925209A00945950 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4779BC41925209A00945950 /* PBXTargetDependency */,
+			);
+			name = UVDGTests;
+			productName = UVDGTests;
+			productReference = C4779BBF1925209A00945950 /* UVDGTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C4779B961925209A00945950 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = J;
+				TargetAttributes = {
+					C4779BBE1925209A00945950 = {
+						TestTargetID = C4779B9D1925209A00945950;
+					};
+				};
+			};
+			buildConfigurationList = C4779B991925209A00945950 /* Build configuration list for PBXProject "UVDG" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C4779B951925209A00945950;
+			productRefGroup = C4779B9F1925209A00945950 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C4779B9D1925209A00945950 /* UVDG */,
+				C4779BBE1925209A00945950 /* UVDGTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C4779B9C1925209A00945950 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C486EBC3192A981400E75521 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4779BBD1925209A00945950 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C4779B9A1925209A00945950 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4950F9719254259007E1EAE /* GraphView.m in Sources */,
+				C4779BB51925209A00945950 /* AppDelegate.m in Sources */,
+				C4779BAE1925209A00945950 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4779BBB1925209A00945950 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C4779BC41925209A00945950 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4779B9D1925209A00945950 /* UVDG */;
+			targetProxy = C4779BC31925209A00945950 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C4779BCD1925209A00945950 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C4779BCE1925209A00945950 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C4779BD01925209A00945950 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UVDG/UVDG-Prefix.pch";
+				INFOPLIST_FILE = "UVDG/UVDG-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C4779BD11925209A00945950 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UVDG/UVDG-Prefix.pch";
+				INFOPLIST_FILE = "UVDG/UVDG-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C4779BD31925209A00945950 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UVDG.app/Contents/MacOS/UVDG";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UVDG/UVDG-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "UVDGTests/UVDGTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C4779BD41925209A00945950 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UVDG.app/Contents/MacOS/UVDG";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UVDG/UVDG-Prefix.pch";
+				INFOPLIST_FILE = "UVDGTests/UVDGTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C4779B991925209A00945950 /* Build configuration list for PBXProject "UVDG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4779BCD1925209A00945950 /* Debug */,
+				C4779BCE1925209A00945950 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4779BCF1925209A00945950 /* Build configuration list for PBXNativeTarget "UVDG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4779BD01925209A00945950 /* Debug */,
+				C4779BD11925209A00945950 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4779BD21925209A00945950 /* Build configuration list for PBXNativeTarget "UVDGTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4779BD31925209A00945950 /* Debug */,
+				C4779BD41925209A00945950 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C4779B961925209A00945950 /* Project object */;
+}
