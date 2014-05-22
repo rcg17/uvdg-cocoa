@@ -8,7 +8,7 @@
 
 @implementation GraphView
 
-- (K2)getPoint:(unsigned long)index
+- (K2)getPoint:(NSUInteger)index
 {
     K2 k2;
     [m_points[index] getValue:&k2];
@@ -43,7 +43,8 @@
     
     int startIndex = 0;
     double startTime = m_firstTime;
-    while (startTime < timeOffset) {
+    while (startTime < timeOffset)
+    {
         if (startIndex >= m_points.count) return;
         K2 point = [self getPoint:startIndex++];
         
@@ -53,7 +54,8 @@
     
     double time = timeOffset;
     int index = startIndex;
-    for (int i = 0; i < m_bitmapRect.size.width; i++) {
+    for (int i = 0; i < m_bitmapRect.size.width; i++)
+    {
         double prevTime = time;
         time += m_timeSlice;
 

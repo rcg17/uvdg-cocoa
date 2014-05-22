@@ -3,6 +3,7 @@
 #import "GraphView.h"
 
 #define HIDE_TAILNUMBERS NO
+#define DUPLICATE_DETECTOR_BUFFER_SIZE 1000
 
 @implementation AppDelegate
 
@@ -54,7 +55,7 @@
     
 //    NSLog(@"line: %s", line);
     if (line[0] != 'K') return;
-    if (line[1] == '1' && line[1] == '2') return;
+    if (line[1] < '1' && line[1] > '4') return;
     
     RecvInfo ri;
     ri.hh = atoi(line + 3);
@@ -66,11 +67,25 @@
     
     int seconds = ri.hh * 3600 + ri.mm * 60 + ri.ss;
     double time = seconds + ((double)ri.usec / 1000000.0);
+    
+    for (int i = 0; i < DUPLICATE_DETECTOR_BUFFER_SIZE; i++)
+    {
+        if (time == m_duplicateDetectorBuffer[i])
+        {
+//            NSLog(@"duplicated line, ignoring: %s", line);
+            return;
+        }
+    }
+    
+    m_duplicateDetectorBuffer[m_duplicateDetectorBufferIndex] = time;
+    m_duplicateDetectorBufferIndex++;
+    if (m_duplicateDetectorBufferIndex == DUPLICATE_DETECTOR_BUFFER_SIZE) m_duplicateDetectorBufferIndex = 0;
+    
     if (time < m_lastTime)
     {
         // crossed 00:00:00
         m_day++;
-//        NSLog(@"day cross %d (%02d:%02d:%02d (%lf) < %lf).", m_day, ri.hh, ri.mm, ri.ss, time, m_lastTime);
+        NSLog(@"day cross %d (%02d:%02d:%02d (%lf) < %lf).", m_day, ri.hh, ri.mm, ri.ss, time, m_lastTime);
     }
     double fixedTime = time + (m_day * 24 * 60 * 60);
     ri.time = fixedTime;
@@ -84,14 +99,14 @@
     if (line[1] == '1')
     {
         int tn = atoi(line + 40);
-
+        
         K1 k1;
         k1.ri = ri;
         k1.tailNumber = tn;
         
         if (k1.tailNumber == 0)
         {
-            NSLog(@"bad tail number: %s.", line + 40);
+//            NSLog(@"bad tail number: %s.", line + 40);
         }
         else
         {
@@ -108,6 +123,16 @@
         k2.alt = alt;
         k2.fuel = fuel;
         [self gotK2:k2];
+    }
+    else if (line[1] == '3')
+    {
+//        NSLog(@"%s", line);
+        return;
+    }
+    else
+    {
+//        NSLog(@"%s", line);
+        return;
     }
     
     NSMutableArray *finalizedOccurrences = [NSMutableArray new];
@@ -137,6 +162,53 @@
     [finalizedOccurrences release];
 }
 
+- (void)obtainAircraftStatistics
+{
+    NSMutableDictionary *aircrafts = [NSMutableDictionary dictionary];
+    for (NSDictionary *dict in m_occurrences)
+    {
+        NSString *tailNumber = dict[@"tailNumber"];
+        NSNumber *first = dict[@"first"];
+        NSNumber *last = dict[@"last"];
+
+        NSMutableArray *occurrences = aircrafts[tailNumber];
+        if (occurrences == nil)
+        {
+            occurrences = [NSMutableArray array];
+            aircrafts[tailNumber] = occurrences;
+        }
+        
+        NSDictionary *occurrence = @{@"first": first, @"last": last};
+        [occurrences addObject:occurrence];
+    }
+    
+    NSArray *sortedTailNumbers = [[aircrafts allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    
+    NSLog(@"Unique aircrafts: %ld.", [[aircrafts allKeys] count]);
+    for (NSString *tailNumber in sortedTailNumbers)
+    {
+        double duration = 0.0;
+        NSArray *occurrences = aircrafts[tailNumber];
+        NSMutableSet *days = [NSMutableSet set];
+        for (NSDictionary *occurrence in occurrences)
+        {
+            double first = [occurrence[@"first"] doubleValue];
+            double last = [occurrence[@"last"] doubleValue];
+            
+            int firstDay = (int)first / 86400;
+            int lastDay = (int)last / 86400;
+            
+            [days addObject:[NSNumber numberWithInt:firstDay]];
+            [days addObject:[NSNumber numberWithInt:lastDay]];
+            
+            duration += last - first;
+        }
+        
+        NSLog(@"%05d: %ld occurrence(s), duration %.0lf mins over %ld day(s).",
+              [tailNumber intValue], [occurrences count], duration / 60.0, [days count]);
+    }
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     NSOpenPanel *panel = [NSOpenPanel openPanel];
@@ -161,6 +233,7 @@
     m_pendingOccurrences = [NSMutableDictionary dictionary];
     m_occurrences = [NSMutableArray array];
     m_points = [NSMutableArray array];
+    m_duplicateDetectorBuffer = (double *)calloc(1, DUPLICATE_DETECTOR_BUFFER_SIZE * sizeof(double));
 
     NSUInteger i = 0, length = data.length;
     char *c = (char *)data.bytes;
@@ -199,6 +272,7 @@
     
     NSLog(@"Confidence 3: K1 lines: %ld, K2 lines: %ld.", m_k1Conf3Lines, m_k2Conf3Lines);
     NSLog(@"Confidence 4: K1 lines: %ld, K2 lines: %ld.", m_k1Conf4Lines, m_k2Conf4Lines);
+    NSLog(@"Days: %d.", m_day + 1);
     
     if (HIDE_TAILNUMBERS)
     {
@@ -215,42 +289,7 @@
         }
     }
     
-    // per aircraft statistics
-    
-    NSMutableDictionary *aircrafts = [NSMutableDictionary dictionary];
-    for (NSDictionary *dict in m_occurrences)
-    {
-        NSString *tailNumber = dict[@"tailNumber"];
-        NSNumber *first = dict[@"first"];
-        NSNumber *last = dict[@"last"];
-        
-        NSMutableArray *occurrences = aircrafts[tailNumber];
-        if (occurrences == nil)
-        {
-            occurrences = [NSMutableArray array];
-            aircrafts[tailNumber] = occurrences;
-        }
-        
-        NSDictionary *occurrence = @{@"first": first, @"last": last};
-        [occurrences addObject:occurrence];
-    }
-    
-    NSArray *sortedTailNumbers = [[aircrafts allKeys] sortedArrayUsingSelector:@selector(compare:)];
-    
-    NSLog(@"Unique aircrafts: %ld.", [[aircrafts allKeys] count]);
-    for (NSString *tailNumber in sortedTailNumbers)
-    {
-        double duration = 0.0;
-        NSArray *occurrences = aircrafts[tailNumber];
-        for (NSDictionary *occurrence in occurrences)
-        {
-            double first = [occurrence[@"first"] doubleValue];
-            double last = [occurrence[@"last"] doubleValue];
-            duration += last - first;
-        }
-        
-        NSLog(@"%05d: %ld occurrences, duration %.0lf mins.", [tailNumber intValue], [occurrences count], duration / 60.0);
-    }
+    [self obtainAircraftStatistics];
     
     [m_graphView setOccurrences:m_occurrences andPoints:m_points];
 }

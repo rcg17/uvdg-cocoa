@@ -30,6 +30,8 @@ typedef struct {
     NSMutableDictionary *m_pendingOccurrences;
     NSMutableArray *m_occurrences;
     NSMutableArray *m_points;
+    double *m_duplicateDetectorBuffer;
+    int m_duplicateDetectorBufferIndex;
     
     NSTimeInterval m_lastTime;
     int m_day;
