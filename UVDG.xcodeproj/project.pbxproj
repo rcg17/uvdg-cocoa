@@ -7,25 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4371814194F571B00454D6F /* UvdBitmapGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4371812194F571B00454D6F /* UvdBitmapGenerator.cpp */; };
+		C4371817194F5A5700454D6F /* Mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4371816194F5A5700454D6F /* Mutex.cpp */; };
+		C4406A2F19501D0C005ACF81 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = C4406A2E19501D0C005ACF81 /* beep.wav */; };
+		C4406A3119502031005ACF81 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4406A3019502031005ACF81 /* Carbon.framework */; };
+		C4610B051937997D0070D51D /* RtlUvdParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4610B031937997D0070D51D /* RtlUvdParser.cpp */; };
+		C4610B0819379D060070D51D /* GraphWindowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4610B0719379D060070D51D /* GraphWindowController.mm */; };
+		C4610B0B193CE3490070D51D /* UvdState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4610B09193CE3490070D51D /* UvdState.cpp */; };
 		C4779BA21925209A00945950 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4779BA11925209A00945950 /* Cocoa.framework */; };
 		C4779BAE1925209A00945950 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4779BAD1925209A00945950 /* main.m */; };
-		C4779BB51925209A00945950 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4779BB41925209A00945950 /* AppDelegate.m */; };
-		C4779BC21925209A00945950 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4779BA11925209A00945950 /* Cocoa.framework */; };
+		C4779BB51925209A00945950 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4779BB41925209A00945950 /* AppDelegate.mm */; };
 		C486EBC3192A981400E75521 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C486EBC2192A981400E75521 /* MainMenu.xib */; };
-		C4950F9719254259007E1EAE /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4950F9619254259007E1EAE /* GraphView.m */; };
+		C4950F9719254259007E1EAE /* GraphView.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4950F9619254259007E1EAE /* GraphView.mm */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		C4779BC31925209A00945950 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C4779B961925209A00945950 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C4779B9D1925209A00945950;
-			remoteInfo = UVDG;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		C4371812194F571B00454D6F /* UvdBitmapGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UvdBitmapGenerator.cpp; sourceTree = "<group>"; };
+		C4371813194F571B00454D6F /* UvdBitmapGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UvdBitmapGenerator.h; sourceTree = "<group>"; };
+		C4371815194F576800454D6F /* Mutex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mutex.h; sourceTree = "<group>"; };
+		C4371816194F5A5700454D6F /* Mutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mutex.cpp; sourceTree = "<group>"; };
+		C4406A2E19501D0C005ACF81 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
+		C4406A3019502031005ACF81 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		C4610B031937997D0070D51D /* RtlUvdParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RtlUvdParser.cpp; sourceTree = "<group>"; };
+		C4610B041937997D0070D51D /* RtlUvdParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RtlUvdParser.h; sourceTree = "<group>"; };
+		C4610B0619379D060070D51D /* GraphWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphWindowController.h; sourceTree = "<group>"; };
+		C4610B0719379D060070D51D /* GraphWindowController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GraphWindowController.mm; sourceTree = "<group>"; };
+		C4610B09193CE3490070D51D /* UvdState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UvdState.cpp; sourceTree = "<group>"; };
+		C4610B0A193CE3490070D51D /* UvdState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UvdState.h; sourceTree = "<group>"; };
 		C4779B9E1925209A00945950 /* UVDG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UVDG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4779BA11925209A00945950 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C4779BA41925209A00945950 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -34,11 +42,10 @@
 		C4779BAD1925209A00945950 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C4779BAF1925209A00945950 /* UVDG-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UVDG-Prefix.pch"; sourceTree = "<group>"; };
 		C4779BB31925209A00945950 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		C4779BB41925209A00945950 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C4779BBF1925209A00945950 /* UVDGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UVDGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4779BB41925209A00945950 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		C486EBC2192A981400E75521 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		C4950F9519254259007E1EAE /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
-		C4950F9619254259007E1EAE /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
+		C4950F9619254259007E1EAE /* GraphView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GraphView.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,15 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4406A3119502031005ACF81 /* Carbon.framework in Frameworks */,
 				C4779BA21925209A00945950 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C4779BBC1925209A00945950 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C4779BC21925209A00945950 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				C4779B9E1925209A00945950 /* UVDG.app */,
-				C4779BBF1925209A00945950 /* UVDGTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +81,7 @@
 		C4779BA01925209A00945950 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C4406A3019502031005ACF81 /* Carbon.framework */,
 				C4779BA11925209A00945950 /* Cocoa.framework */,
 				C4779BA31925209A00945950 /* Other Frameworks */,
 			);
@@ -100,14 +100,25 @@
 		C4779BA71925209A00945950 /* UVDG */ = {
 			isa = PBXGroup;
 			children = (
+				C4406A2E19501D0C005ACF81 /* beep.wav */,
+				C4610B031937997D0070D51D /* RtlUvdParser.cpp */,
+				C4610B041937997D0070D51D /* RtlUvdParser.h */,
 				C4779BB31925209A00945950 /* AppDelegate.h */,
-				C4779BB41925209A00945950 /* AppDelegate.m */,
+				C4779BB41925209A00945950 /* AppDelegate.mm */,
 				C4950F9519254259007E1EAE /* GraphView.h */,
-				C4950F9619254259007E1EAE /* GraphView.m */,
+				C4950F9619254259007E1EAE /* GraphView.mm */,
 				C4779BAD1925209A00945950 /* main.m */,
 				C4779BAF1925209A00945950 /* UVDG-Prefix.pch */,
 				C4779BA91925209A00945950 /* UVDG-Info.plist */,
 				C486EBC2192A981400E75521 /* MainMenu.xib */,
+				C4610B0619379D060070D51D /* GraphWindowController.h */,
+				C4610B0719379D060070D51D /* GraphWindowController.mm */,
+				C4610B09193CE3490070D51D /* UvdState.cpp */,
+				C4610B0A193CE3490070D51D /* UvdState.h */,
+				C4371812194F571B00454D6F /* UvdBitmapGenerator.cpp */,
+				C4371813194F571B00454D6F /* UvdBitmapGenerator.h */,
+				C4371815194F576800454D6F /* Mutex.h */,
+				C4371816194F5A5700454D6F /* Mutex.cpp */,
 			);
 			path = UVDG;
 			sourceTree = "<group>";
@@ -132,24 +143,6 @@
 			productReference = C4779B9E1925209A00945950 /* UVDG.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C4779BBE1925209A00945950 /* UVDGTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C4779BD21925209A00945950 /* Build configuration list for PBXNativeTarget "UVDGTests" */;
-			buildPhases = (
-				C4779BBB1925209A00945950 /* Sources */,
-				C4779BBC1925209A00945950 /* Frameworks */,
-				C4779BBD1925209A00945950 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C4779BC41925209A00945950 /* PBXTargetDependency */,
-			);
-			name = UVDGTests;
-			productName = UVDGTests;
-			productReference = C4779BBF1925209A00945950 /* UVDGTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -158,11 +151,6 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = J;
-				TargetAttributes = {
-					C4779BBE1925209A00945950 = {
-						TestTargetID = C4779B9D1925209A00945950;
-					};
-				};
 			};
 			buildConfigurationList = C4779B991925209A00945950 /* Build configuration list for PBXProject "UVDG" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -178,7 +166,6 @@
 			projectRoot = "";
 			targets = (
 				C4779B9D1925209A00945950 /* UVDG */,
-				C4779BBE1925209A00945950 /* UVDGTests */,
 			);
 		};
 /* End PBXProject section */
@@ -188,14 +175,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4406A2F19501D0C005ACF81 /* beep.wav in Resources */,
 				C486EBC3192A981400E75521 /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C4779BBD1925209A00945950 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,28 +187,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4950F9719254259007E1EAE /* GraphView.m in Sources */,
-				C4779BB51925209A00945950 /* AppDelegate.m in Sources */,
+				C4371814194F571B00454D6F /* UvdBitmapGenerator.cpp in Sources */,
+				C4950F9719254259007E1EAE /* GraphView.mm in Sources */,
+				C4779BB51925209A00945950 /* AppDelegate.mm in Sources */,
 				C4779BAE1925209A00945950 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C4779BBB1925209A00945950 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				C4610B0819379D060070D51D /* GraphWindowController.mm in Sources */,
+				C4371817194F5A5700454D6F /* Mutex.cpp in Sources */,
+				C4610B051937997D0070D51D /* RtlUvdParser.cpp in Sources */,
+				C4610B0B193CE3490070D51D /* UvdState.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C4779BC41925209A00945950 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C4779B9D1925209A00945950 /* UVDG */;
-			targetProxy = C4779BC31925209A00945950 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C4779BCD1925209A00945950 /* Debug */ = {
@@ -330,46 +301,6 @@
 			};
 			name = Release;
 		};
-		C4779BD31925209A00945950 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UVDG.app/Contents/MacOS/UVDG";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UVDG/UVDG-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "UVDGTests/UVDGTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		C4779BD41925209A00945950 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UVDG.app/Contents/MacOS/UVDG";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UVDG/UVDG-Prefix.pch";
-				INFOPLIST_FILE = "UVDGTests/UVDGTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -387,15 +318,6 @@
 			buildConfigurations = (
 				C4779BD01925209A00945950 /* Debug */,
 				C4779BD11925209A00945950 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C4779BD21925209A00945950 /* Build configuration list for PBXNativeTarget "UVDGTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C4779BD31925209A00945950 /* Debug */,
-				C4779BD41925209A00945950 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

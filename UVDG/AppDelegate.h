@@ -1,52 +1,42 @@
 
-typedef struct {
-    int hh, mm, ss, usec;
-    double time;
-    int amplitude;
-    int confidence;
-} RecvInfo;
+#import "GraphWindowController.h"
+#include "UvdState.h"
+#import "RtlUvdParser.h"
 
-typedef struct {
-    RecvInfo ri;
-    int tailNumber;
-} K1;
-
-typedef struct {
-    RecvInfo ri;
-    int alt;
-    int fuel;
-} K2;
-
-@class GraphView;
-
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSStreamDelegate>
 {
-    IBOutlet GraphView *m_graphView;
-    IBOutlet NSSlider *m_timeOffsetSlider;
-    IBOutlet NSSlider *m_zoomSlider;
-    IBOutlet NSButton *m_confidence4OnlySwitch;
-    IBOutlet NSSlider *m_boldThresholdSlider;
+    GraphWindowController *m_graphWindowController;
     
-    NSMutableDictionary *m_pendingOccurrences;
-    NSMutableArray *m_occurrences;
-    NSMutableArray *m_points;
-    double *m_duplicateDetectorBuffer;
-    int m_duplicateDetectorBufferIndex;
+    IBOutlet NSButton *m_useLogSwitch;
+    IBOutlet NSButton *m_chooseLogFileButton;
+    IBOutlet NSTextField *m_logFilePathLabel;
+
+    IBOutlet NSButton *m_useServerSwitch;
+    IBOutlet NSTextField *m_hostField;
+    IBOutlet NSTextField *m_portField;
     
-    NSTimeInterval m_lastTime;
-    int m_day;
+    IBOutlet NSButton *m_goButton;
     
-    NSUInteger m_k1Conf3Lines;
-    NSUInteger m_k2Conf3Lines;
-    NSUInteger m_k1Conf4Lines;
-    NSUInteger m_k2Conf4Lines;
+    UvdState *m_state;
+    RtlUvdParser *m_parser;
+    
+    NSThread *m_tcpThread;
+    NSInputStream *m_inputStream;
+    int m_reconnectDelay;
+    int m_secondsToReconnect;
+    NSTimer *m_reconnectTimer;
+
+    char *m_buffer;
+    int m_bufferSize;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 
-- (IBAction)timeOffsetAction:(id)sender;
-- (IBAction)zoomAction:(id)sender;
-- (IBAction)confidence4OnlyAction:(id)sender;
-- (IBAction)boldThresholdAction:(id)sender;
+- (IBAction)useSwitchAction:(id)sender;
+- (IBAction)chooseLogFileAction:(id)sender;
+- (IBAction)goAction:(id)sender;
+
+- (void)requestDisconnect;
+- (void)requestReconnect;
 
 @end

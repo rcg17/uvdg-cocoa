@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
+        <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
@@ -13,11 +14,13 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
-                <outlet property="m_boldThresholdSlider" destination="SWL-W3-Gvo" id="ePa-DJ-f4S"/>
-                <outlet property="m_confidence4OnlySwitch" destination="yrg-7t-VCy" id="lW8-gV-xzx"/>
-                <outlet property="m_graphView" destination="fvD-P1-2ys" id="o7f-P6-aR4"/>
-                <outlet property="m_timeOffsetSlider" destination="yHh-EE-qAc" id="Lqe-ag-tu8"/>
-                <outlet property="m_zoomSlider" destination="wkq-VQ-Lci" id="ahr-MO-hDH"/>
+                <outlet property="m_chooseLogFileButton" destination="dgn-4i-6Lh" id="kgb-bN-ql0"/>
+                <outlet property="m_goButton" destination="95a-fP-Gk8" id="3Jh-ox-3mj"/>
+                <outlet property="m_hostField" destination="TeD-KL-EEj" id="oX0-hW-idA"/>
+                <outlet property="m_logFilePathLabel" destination="bJc-hT-FKG" id="UD1-NR-uzt"/>
+                <outlet property="m_portField" destination="439-6e-HdS" id="xr7-Ly-JNz"/>
+                <outlet property="m_useLogSwitch" destination="1j6-bq-WTW" id="fQz-yV-q1g"/>
+                <outlet property="m_useServerSwitch" destination="aKL-KP-gFa" id="Wx5-eY-PWI"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -674,64 +677,103 @@
         <window title="UVDG" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+            <rect key="contentRect" x="335" y="390" width="397" height="189"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <value key="maxSize" type="size" width="1200" height="189"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="397" height="189"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="fvD-P1-2ys" customClass="GraphView">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                    <button id="1j6-bq-WTW">
+                        <rect key="frame" x="18" y="153" width="404" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <subviews>
-                            <slider verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yHh-EE-qAc">
-                                <rect key="frame" x="18" y="322" width="444" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="vxe-83-k3k"/>
-                                <connections>
-                                    <action selector="timeOffsetAction:" target="Voe-Tx-rLC" id="SVq-OD-NCz"/>
-                                </connections>
-                            </slider>
-                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wkq-VQ-Lci">
-                                <rect key="frame" x="18" y="298" width="204" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="OUC-oe-NBg"/>
-                                <connections>
-                                    <action selector="zoomAction:" target="Voe-Tx-rLC" id="ykL-3k-pN5"/>
-                                </connections>
-                            </slider>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yrg-7t-VCy">
-                                <rect key="frame" x="226" y="300" width="22" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="RvU-3k-QK6">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="confidence4OnlyAction:" target="Voe-Tx-rLC" id="tG5-6e-j3d"/>
-                                </connections>
-                            </button>
-                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SWL-W3-Gvo">
-                                <rect key="frame" x="252" y="298" width="204" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.39200000000000002" tickMarkPosition="above" sliderType="linear" id="xJe-oK-Nsr"/>
-                                <connections>
-                                    <action selector="boldThresholdAction:" target="Voe-Tx-rLC" id="pmz-kU-5uD"/>
-                                </connections>
-                            </slider>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="yHh-EE-qAc" secondAttribute="trailing" constant="20" id="EPM-zJ-3t3"/>
-                            <constraint firstItem="yHh-EE-qAc" firstAttribute="leading" secondItem="fvD-P1-2ys" secondAttribute="leading" constant="20" id="e7g-1c-dP7"/>
-                        </constraints>
-                    </customView>
+                        <buttonCell key="cell" type="check" title="Load log file" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="rui-o7-h7o">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="useSwitchAction:" target="Voe-Tx-rLC" id="Mb5-uM-ccy"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="bJc-hT-FKG">
+                        <rect key="frame" x="115" y="128" width="264" height="17"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" lineBreakMode="truncatingMiddle" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Label" id="EP0-rb-Xjo">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" id="dgn-4i-6Lh">
+                        <rect key="frame" x="28" y="119" width="87" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Choose" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HQT-Iu-Vxi">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="chooseLogFileAction:" target="Voe-Tx-rLC" id="fpo-6N-ICB"/>
+                        </connections>
+                    </button>
+                    <button id="aKL-KP-gFa">
+                        <rect key="frame" x="18" y="90" width="404" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Connect to RTL-UVD" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="pWC-Ns-nkG">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="useSwitchAction:" target="Voe-Tx-rLC" id="vN3-nY-Eyq"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="DbT-TU-5nz">
+                        <rect key="frame" x="32" y="65" width="37" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Host:" id="6hD-V4-Fd0">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" id="TeD-KL-EEj">
+                        <rect key="frame" x="75" y="62" width="180" height="22"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="127.0.0.1" drawsBackground="YES" id="GdO-Ji-xsX">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="II8-To-Y35">
+                        <rect key="frame" x="261" y="65" width="34" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Port:" id="wzA-x0-L3T">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" id="439-6e-HdS">
+                        <rect key="frame" x="301" y="62" width="76" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="31003" drawsBackground="YES" id="Dn8-y2-E1m">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" id="95a-fP-Gk8">
+                        <rect key="frame" x="20" y="13" width="60" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="GO" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="88e-gk-8Xj">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="goAction:" target="Voe-Tx-rLC" id="KkV-nc-pBx"/>
+                        </connections>
+                    </button>
                 </subviews>
-                <constraints>
-                    <constraint firstAttribute="bottom" secondItem="fvD-P1-2ys" secondAttribute="bottom" id="BvZ-QU-gFy"/>
-                    <constraint firstItem="fvD-P1-2ys" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="XeJ-dj-w3R"/>
-                    <constraint firstAttribute="trailing" secondItem="fvD-P1-2ys" secondAttribute="trailing" id="ahx-hN-PeH"/>
-                    <constraint firstItem="fvD-P1-2ys" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="hD1-Gd-jJ0"/>
-                </constraints>
             </view>
         </window>
     </objects>

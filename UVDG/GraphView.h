@@ -1,38 +1,67 @@
 
-#import "AppDelegate.h"
+#import "UvdState.h"
+#import "UvdBitmapGenerator.h"
 
-@interface GraphView : NSView
+@interface GraphView : NSView < NSSoundDelegate>
 {
+    UvdState *m_state;
+    
+    UvdBitmapGenerator *m_bitmapGenerator;
     uint8 *m_bitmap;
-
-    NSArray *m_occurrences;
-
-    NSArray *m_points;
+    NSRect m_bitmapRect;
+    
     double m_firstTime;
     double m_lastTime;
-    
-    double m_normalizedTimeOffset;
+    double m_timeOffset;
     double m_timeSlice;
-    BOOL m_confidence4Only;
-    int m_boldThreshold;
+    BOOL m_isLineCrossEnabled;
     
     NSPoint m_downPoint;
     NSPoint m_dragPoint;
     NSPoint m_hoverPoint;
-    BOOL m_showLineCross;
+    int m_hoverFuel;
     
-    NSRect m_bitmapRect;
+    NSRect m_knobRect;
+    bool m_isDraggingKnob;
+    float m_knobDragOffset;
     
+    bool m_isNotificationShown;
+    float m_notificationTimeLeft;
+    NSString *m_notificationText;
+    
+    bool m_isStartingRealtimeMode;
+    double m_realtimeMarkerTime;
+    bool m_isLockedOnRealtimeMarker;
+
+    NSTimeInterval m_lastTimeLocal;
+    NSTimeInterval m_realtimeTickTimeLocal;
+    NSTimeInterval m_lastUpdateTimeLocal;
+    
+    bool m_isBeepingEnabled;
+    bool m_isBeepPlaying;
+    NSSound *m_beep;
+    
+    bool m_isShowingStatusBox;
+    
+    NSString *m_connectionStatus;
+
+    NSTimer *m_timer;
+
     NSTrackingArea *m_trackingArea;
     
     NSParagraphStyle *m_centerAlignStyle;
     NSParagraphStyle *m_rightAlignStyle;
 }
 
-- (void)setOccurrences:(NSArray *)occurrences andPoints:(NSArray *)points;
-- (void)setNormalizedTimeOffset:(double)normalizedTimeOffset;
-- (void)setZoom:(double)zoom;
-- (void)setConfidence4Only:(BOOL)flag;
-- (void)setBoldThreshold:(double)boldThreshold;
+- (id)initWithFrame:(NSRect)frame andUvdState:(UvdState *)state;
+
+- (void)startRealtimeMode;
+
+- (void)uvdStateChanged:(double)time;
+
+- (void)tcpConnecting;
+- (void)tcpConnected;
+- (void)tcpReconnectIn:(int)seconds;
+- (void)tcpDisconnected;
 
 @end
